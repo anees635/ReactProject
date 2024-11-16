@@ -2,14 +2,14 @@
 import './App.css';
 import Alert from './Alert'
 import Navbar from './Navbar.js';
-// import About from './About.js';
+import About from './About.js';
 import Textform from './Textform.js';
 import React,{useState}from 'react'
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 
@@ -63,23 +63,24 @@ function App() {
     }, 1200);
   }
   return (
-    <>
-    <Alert alert={alert}/>
-    <Navbar title="TextTracker" mode={mode}/>
-    <Textform heading="Enter text below to analyze" makealert={makealert} mode={style} btntext={btntext} border={border} func={toogleStyle}/>
-    </>
+    // <>
+    // <Alert alert={alert}/>
+    // <Navbar title="TextTracker" mode={mode}/>
+    // <Textform heading="Enter text below to analyze" makealert={makealert} mode={style} btntext={btntext} border={border} func={toogleStyle}/>
+    // </>
 
-  //   <BrowserRouter>
-  //   <Alert alert={alert}/>
-  //   <Routes>
-  //     <Route path="/" element={<Navbar title="TextTracker" mode={mode}/>}>
+    <BrowserRouter>
+    <Alert alert={alert}/>
+    <Routes>
+      <Route path="/" element={<Navbar title="TextTracker" mode={mode}/>}>
         
         
-  //       <Route path='/Text' element={<Textform heading="Enter text below to analyze" makealert={makealert} mode={style} btntext={btntext} border={border} func={toogleStyle}/>} />
-  //       <Route path='/about' element={<About />} />
-  //     </Route>
-  //   </Routes>
-  // </BrowserRouter>
+        <Route path='/Text' element={<Textform heading="Enter text below to analyze" makealert={makealert} mode={style} btntext={btntext} border={border} func={toogleStyle}/>} />
+        <Route path='/About' element={<About />} />
+      </Route>
+
+    </Routes>
+  </BrowserRouter>
      
   );
  
